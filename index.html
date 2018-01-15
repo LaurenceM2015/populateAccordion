@@ -1,37 +1,48 @@
 
-<?php
-	$bloks = file_get_contents('http://design.propcom.co.uk/buildtest/accordion-data.json', 'jsonp');
-echo $blocks;
-?>
-
 
 
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Populate The Accordion. </title>
+		<title>FAQ Slider</title>
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<script src="assets/js/script.js"></script>
 	</head>
 	<body>
 		<div id="container">
-			<h1>Dynamically populate the accordion. </h1>
-			<!--<div class="title"><h3>FAQ Slider Using jQuery</h3></div>-->
-			<ul class="faq">
-				<li class="q" onclick="document.li.style.backgroundColor = 'green';"><span>Section 1</span> <img src="assets/img/arrow.png"></li>
-				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+			<h1>jQuery FAQ Slider</h1>
+			
+			<div>
+				<ul class="faq" id="menu">
+					<li class="q"><span>Section 1</span> <img src="assets/img/arrow.png"></li>
+					<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+
+					<li class="q"><span>Section 1</span> <img src="assets/img/arrow.png"></li>
+					<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
+				</ul>
 				
-				<li class="q" onclick="document.li.style.backgroundColor = 'green';"><span>Section 1</span> <img src="assets/img/arrow.png"></li>
-				<li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
 				
-				
-			</ul>
+			</div>
+			
+			
+	
+		
+		<script>
+			
+			var $li = $('#menu li').click(function() {
+				$li.removeClass('selected');
+				$(this).addClass('selected');
+			});
+			
+			function setup(){
+				loadJson("http://design.propcom.co.uk/buildtest/accordion-data.json")
+			}
+		</script>
+			
 		</div>
-		<!-- script -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="assets/js/script.js"></script>
 	</body>
 </html>
 

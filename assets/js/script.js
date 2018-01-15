@@ -1,5 +1,5 @@
 // Accordian
-var action="click"; // option click or double click
+var action="click";
 var speed="500";
 
 $(document).ready(function(){
@@ -20,7 +20,5 @@ $(document).ready(function(){
 	});
 });
 
-var $li = $('.faq li').click(function() {
-    $li.removeClass('selected');
-    $(this).addClass('selected');
-});
+
+

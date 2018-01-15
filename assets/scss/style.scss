@@ -3,12 +3,20 @@
 	padding:0;
 }
 
+$body-font-family:'Tahoma', sans-serif;
+$pramry-line-hieght: 1.6em;
+$primary-color: #666666;
+$bkg-color: #f9f9f9;
+
+	
+
+/* Layout */
 body{
-	font-family:'Tahoma', sans-serif;
-	color:#666;
+	font-family:$body-font-family;
+	color:$primary-color;
 	font-size:16px;
-	background:#f9f9f9;
-	line-height:1.6em;
+	background:$bkg-color;
+	line-height:$pramry-line-hieght;
 }
 
 ul,li{
@@ -19,69 +27,73 @@ ul,li{
 	width:60%;
 	margin:30px auto;
 	overfloaw:auto;
-}
-
-h1{
-	text-align:center;
-	margin-bottom:20px;
-	text-transform: capitalize;
-}
-
-.title{
-	height:40px;
-	background:#6bb170;
-	color:#fff;
-	text-align:center;
-	padding-top:13px;
-}
-
-.faq li{
-	padding:20px;
-}
-
-.faq li.q{
-	background:#7229bc;
-	font-weight:bold;
-	padding-bottom: 2em;
-	padding-top: 2em;
-	border-bottom:1px #ddd solid;
-	cursor:pointer;
-	color: #fff;
-}
-
-.faq li.q span{
-	font-size:180%;
-}
-
-.faq li.q img{
-	float: right;
-}
-
-
-
-.faq li.a{
 	
+	h1{
+		text-align:center;
+		margin-bottom:20px;
+		text-transform: capitalize;
+	}
 	
-	display:none;
-	border-bottom: 1px #ddd solid;
-	border-right: 1px #ddd solid;
-	border-left: 1px #ddd solid;
-}
-
-.faq li.selected {
-    background: #ae00b4;
-}
-
-
-.rotate{
+	.title{
+		height:40px;
+		background:#6bb170;
+		color:#fff;
+		text-align:center;
+		padding-top:13px;
+	}
 	
-	
-	-webkit-transform:rotate(180deg);
-	transform:rotate(180deg);
-}
-
-@media(max-width:800px){
-	#container{
-		width:90%;
+		@media(max-width:800px){
+		#container{
+			width:90%;
+		}
 	}
 }
+
+
+
+.faq {
+	
+	li{
+		padding:20px;
+		
+		.q{
+			background:#7229bc;
+			font-weight:bold;
+			padding-bottom: 2em;
+			padding-top: 2em;
+			border-bottom:1px #ddd solid;
+			cursor:pointer;
+			color: #fff;
+			
+			.selected {
+				background: #ae00b4;
+			}
+
+			span{
+				font-size:180%;
+			}
+			
+			img{
+				float: right;
+				
+				.rotate{
+					-webkit-transform:rotate(180deg);
+					transform:rotate(180deg);
+				}
+			}
+		}
+	}
+	
+	li.a{
+		display:none;
+		border-bottom: 1px #ddd solid;
+		border-right: 1px #ddd solid;
+		border-left: 1px #ddd solid;
+	}
+	
+	
+}
+
+
+
+
